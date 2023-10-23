@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter&display=swap');
+:root {
+  /* Fonts */
+  --font-headlines: 'Cinzel', serif;
+  --font-paragraphs: 'Inter', sans-serif;
+
+  /* Colors */
+  --color-light: #fdfcfc;
+  --color-dark: #27272e;
+  --color-darker: #16161a;
+  --color-highlight: #5092d2;
+
+  /* Font sizes */
+  --font-size-h1: 64px;
+  --font-size-h2: 48px;
+  --font-size-h3: 32px;
+  --font-size-paragraph-l: 18px;
+  --font-size-paragraph-s: 16px;
+  --font-size-btn: 14px;
+
+  /* Spacings */
+  --gap-xl: 50px;
+  --gap-lg: 30px;
+  --gap-md: 20px;
+  --gap-sm: 10px;
+
+  --padding-xl: 60px;
+  --padding-lg: 30px;
+  --padding-md: 20px;
+  --padding-sm: 10px;
+
+  --margin-section: 130px;
+
+  /* Borders */
+  --radius-md: 5px;
+  --radius-lg: 15px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: var(--font-headlines);
+}
+
+body {
+  background-color: var(--color-darker);
+  color: var(--color-light);
+}
+
+#menu-toggle,
+#menu-icon {
+  display: none;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-lg);
+}
+
+.button {
+  background-color: var(--color-highlight);
+  border-radius: var(--radius-md);
+  padding: var(--padding-sm) var(--padding-md);
+  color: var(--color-darker);
+}
+
+/* Estilos header */
+header.flex-container {
+  padding: var(--padding-sm) var(--padding-lg);
+  position: fixed;
+  width: 100%;
+}
+
+#logo {
+  max-width: 200px;
+}
+img.deco {
+  flex-shrink: 2;
+  max-width: 300px;
+  min-width: 100px;
+  transition: width 0.5s;
+}
+
+header > nav > ul {
+  font-size: var(--font-size-btn);
+  min-width: 400px;
+}
+
+@media screen and (max-width: 900px) {
+  header > nav > .menu-content {
+    display: none;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  #menu-icon > img {
+    width: 32px;
+  }
+}
+
+@media (max-width: 530px) {
+  img.deco {
+    display: none;
+  }
+}
