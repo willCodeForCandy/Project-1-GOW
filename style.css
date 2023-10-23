@@ -92,15 +92,31 @@ header > nav > ul {
 
 @media screen and (max-width: 900px) {
   header > nav > .menu-content {
-    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    flex-direction: column;
+    min-width: 0;
+    width: 0px;
+    overflow: hidden;
+    background-color: var(--color-dark);
+    white-space: nowrap;
+    transition: all 0.5s;
   }
 
   #menu-icon {
     display: block;
+    cursor: pointer;
   }
 
   #menu-icon > img {
     width: 32px;
+  }
+
+  #menu-toggle:checked ~ .menu-content {
+    display: flex;
+    width: 200px;
+    padding: var(--padding-lg);
   }
 }
 
