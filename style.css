@@ -49,6 +49,10 @@ body {
   color: var(--color-light);
 }
 
+a {
+  color: var(--color-light);
+}
+
 #menu-toggle,
 #menu-icon {
   display: none;
@@ -147,6 +151,48 @@ header > nav > ul {
   aspect-ratio: 1.7;
 }
 
+/* Galería Héroes */
+
+.horizontal-gallery {
+  flex-direction: column;
+  margin-top: var(--margin-section);
+}
+
+.horizontal-gallery ul {
+  padding: var(--padding-xl);
+  gap: var(--gap-md);
+  width: 100%;
+}
+.horizontal-gallery img.main-img {
+  position: absolute;
+  bottom: 0;
+  height: 350px;
+  filter: saturate(0.5);
+  transition: ease-in-out 0.5s;
+}
+.horizontal-gallery ul > li {
+  position: relative;
+  background-color: var(--color-dark);
+  flex-basis: 20%;
+  overflow-x: clip;
+  flex-grow: 1;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  transition: ease-in-out 0.5s;
+}
+.horizontal-gallery ul > li:hover {
+  border: 1px solid var(--color-highlight);
+}
+.horizontal-gallery ul > li:hover img {
+  filter: saturate(1);
+}
+.horizontal-gallery h3 {
+  margin-bottom: var(--padding-xl);
+  z-index: 10;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 950px) {
@@ -196,38 +242,6 @@ header > nav > ul {
     position: relative;
     top: 0;
     align-self: center;
-  }
-  div.img-container {
-    position: relative;
-  }
-  div.img-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-image: -moz-linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 1) 12%,
-      rgba(72, 72, 72, 0.06486344537815125) 37%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    background-image: -webkit-linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 1) 12%,
-      rgba(72, 72, 72, 0.06486344537815125) 37%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    background-image: -ms-linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 1) 12%,
-      rgba(72, 72, 72, 0.06486344537815125) 37%,
-      rgba(255, 255, 255, 0) 100%
-    );
   }
   .text-content h1 {
     font-size: 26px;
