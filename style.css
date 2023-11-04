@@ -71,6 +71,7 @@ a {
   padding: var(--padding-sm) var(--padding-md);
   color: var(--color-darker);
   border: 1px solid var(--color-highlight);
+  cursor: pointer;
 }
 
 /* Estilos header */
@@ -107,7 +108,7 @@ header > nav > ul {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: 0 var(--padding-lg);
+  padding: var(--padding-lg);
   padding-top: var(--margin-section);
   min-height: 45svh;
   justify-content: center;
@@ -159,9 +160,10 @@ header > nav > ul {
 }
 
 .horizontal-gallery ul {
-  padding: var(--padding-xl);
+  padding: 0 var(--padding-xl);
   gap: var(--gap-md);
   width: 100%;
+  flex-wrap: wrap;
 }
 .horizontal-gallery img.main-img {
   position: absolute;
@@ -181,6 +183,9 @@ header > nav > ul {
   justify-content: center;
   align-items: end;
   transition: ease-in-out 0.5s;
+  border: 1px solid var(--color-dark);
+  min-width: 200px;
+  margin-top: var(--padding-xl);
 }
 .horizontal-gallery ul > li:hover {
   border: 1px solid var(--color-highlight);
@@ -192,7 +197,27 @@ header > nav > ul {
   margin-bottom: var(--padding-xl);
   z-index: 10;
 }
+/* ===== Scrollbar ===== */
+/* Firefox */
+.horizontal-gallery ul {
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-highlight) var(--color-dark);
+}
 
+/* Chrome, Edge, and Safari */
+.horizontal-gallery ul::-webkit-scrollbar {
+  width: 16px;
+}
+
+.horizontal-gallery ul::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+
+.horizontal-gallery ul::-webkit-scrollbar-thumb {
+  background-color: var(--color-highlight);
+  border-radius: 10px;
+  border: 3px solid var(--color-dark);
+}
 /* Media Queries */
 
 @media screen and (max-width: 950px) {
