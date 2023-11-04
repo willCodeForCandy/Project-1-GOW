@@ -187,8 +187,9 @@ header > nav > ul {
   min-width: 200px;
   margin-top: var(--padding-xl);
 }
-.horizontal-gallery ul > li:hover {
+.hover-effect:hover {
   border: 1px solid var(--color-highlight);
+  filter: saturate(1);
 }
 .horizontal-gallery ul > li:hover img {
   filter: saturate(1);
@@ -197,27 +198,37 @@ header > nav > ul {
   margin-bottom: var(--padding-xl);
   z-index: 10;
 }
-/* ===== Scrollbar ===== */
-/* Firefox */
-.horizontal-gallery ul {
-  scrollbar-width: auto;
-  scrollbar-color: var(--color-highlight) var(--color-dark);
+/* Galeria */
+#gallery {
+  margin-top: var(--margin-section);
+  background-image: url(https://res.cloudinary.com/dbme57sjz/image/upload/v1698068334/assets/section-bg_qgnoqf.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 var(--padding-xl);
 }
 
-/* Chrome, Edge, and Safari */
-.horizontal-gallery ul::-webkit-scrollbar {
-  width: 16px;
+#gallery > div {
+  flex-direction: column;
+  max-width: 30%;
 }
 
-.horizontal-gallery ul::-webkit-scrollbar-track {
-  background: var(--color-dark);
+#gallery h2 {
+  font-size: var(--font-size-h3);
+}
+#gallery p {
+  font-family: var(--font-paragraphs);
+  font-size: var(--font-size-paragraph-s);
 }
 
-.horizontal-gallery ul::-webkit-scrollbar-thumb {
-  background-color: var(--color-highlight);
-  border-radius: 10px;
-  border: 3px solid var(--color-dark);
+.img-reel img {
+  max-width: 350px;
+  width: 100%;
+  filter: saturate(0.5);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: 0.5s;
 }
+
 /* Media Queries */
 
 @media screen and (max-width: 950px) {
@@ -256,6 +267,19 @@ header > nav > ul {
   .text-content > p {
     background-color: #27272ebb;
     border-radius: var(--radius-md);
+  }
+  #gallery {
+    background-position: center top;
+    flex-direction: column-reverse;
+  }
+  #gallery > div {
+    width: 100%;
+    max-width: none;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .img-reel img {
+    max-width: 250px;
   }
 }
 
