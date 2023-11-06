@@ -53,6 +53,11 @@ a {
   color: var(--color-light);
 }
 
+section {
+  padding: var(--padding-xl);
+  padding-top: var(--margin-section);
+}
+
 #menu-toggle,
 #menu-icon {
   display: none;
@@ -108,8 +113,6 @@ header > nav > ul {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: var(--padding-lg);
-  padding-top: var(--margin-section);
   min-height: 45svh;
   justify-content: center;
   overflow: hidden;
@@ -156,11 +159,11 @@ header > nav > ul {
 
 .horizontal-gallery {
   flex-direction: column;
-  margin-top: var(--margin-section);
+  /* margin-top: var(--margin-section); */
 }
 
 .horizontal-gallery ul {
-  padding: 0 var(--padding-xl);
+  /* padding: 0 var(--padding-xl); */
   gap: var(--gap-md);
   width: 100%;
   flex-wrap: wrap;
@@ -200,11 +203,11 @@ header > nav > ul {
 }
 /* Galeria */
 #gallery {
-  margin-top: var(--margin-section);
+  /* margin-top: var(--margin-section); */
   background-image: url(https://res.cloudinary.com/dbme57sjz/image/upload/v1698068334/assets/section-bg_qgnoqf.png);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 0 var(--padding-xl);
+  /* padding: 0 var(--padding-xl); */
 }
 
 #gallery > div {
