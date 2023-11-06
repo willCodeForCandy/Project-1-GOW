@@ -58,6 +58,10 @@ section {
   padding-top: var(--margin-section);
 }
 
+h2 {
+  font-size: var(--font-size-h3);
+}
+
 #menu-toggle,
 #menu-icon {
   display: none;
@@ -77,6 +81,20 @@ section {
   color: var(--color-darker);
   border: 1px solid var(--color-highlight);
   cursor: pointer;
+}
+
+.text-content {
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+.text-content h1 {
+  font-size: var(--font-size-h2);
+}
+.text-content p {
+  font-family: var(--font-paragraphs);
+  font-size: var(--font-size-paragraph-s);
 }
 
 /* Estilos header */
@@ -118,21 +136,7 @@ header > nav > ul {
   overflow: hidden;
 }
 
-.text-content {
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 100%;
-}
-
-.text-content h1 {
-  font-size: var(--font-size-h2);
-}
-.text-content p {
-  font-family: var(--font-paragraphs);
-  width: 65%;
-}
-
-.text-content button:last-child {
+#hero .text-content button:last-child {
   background-color: var(--color-dark);
   border-color: var(--color-light);
   color: var(--color-light);
@@ -144,14 +148,15 @@ header > nav > ul {
 
 #hero-img {
   position: absolute;
-  top: var(--margin-section);
   right: 0;
+  bottom: 0;
   max-height: 35svh;
   z-index: -1;
 }
 
 #hero iframe {
-  width: 400px;
+  width: 300px;
+  /* max-width: 20vw; */
   aspect-ratio: 1.7;
 }
 
@@ -232,6 +237,35 @@ header > nav > ul {
   transition: 0.5s;
 }
 
+/* Weapons Gallery */
+#weapons h2 {
+  padding: var(--padding-md) 0;
+}
+#weapons > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--gap-md);
+}
+#weapons article {
+  background-color: var(--color-dark);
+  border-radius: var(--radius-md);
+  position: relative;
+  min-height: 300px;
+}
+
+#weapons article .text-content {
+  width: 60%;
+  padding: var(--padding-md);
+}
+
+#weapons img {
+  position: absolute;
+  max-height: 90%;
+  max-width: 40%;
+  bottom: 0;
+  right: var(--padding-md);
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 950px) {
@@ -287,6 +321,10 @@ header > nav > ul {
 }
 
 @media (max-width: 530px) {
+  section {
+    padding: var(--padding-md);
+    padding-top: var(--margin-section);
+  }
   img.deco {
     display: none;
   }
@@ -304,5 +342,9 @@ header > nav > ul {
 
   iframe {
     max-width: 100%;
+  }
+
+  #weapons > div {
+    grid-template-columns: 1fr;
   }
 }
