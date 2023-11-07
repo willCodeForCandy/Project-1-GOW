@@ -51,8 +51,12 @@ body {
 
 a {
   color: var(--color-light);
+  transition: ease-in-out 0.3s;
 }
 
+a:hover {
+  color: var(--color-highlight);
+}
 section,
 footer {
   padding: var(--padding-xl);
@@ -89,6 +93,10 @@ p {
   color: var(--color-darker);
   border: 1px solid var(--color-highlight);
   cursor: pointer;
+  transition: ease-in-out 0.5s;
+}
+.button:hover {
+  transform: scale(1.1);
 }
 
 .text-content {
@@ -156,8 +164,14 @@ header > nav > ul {
 
 #hero iframe {
   width: 300px;
-  /* max-width: 20vw; */
   aspect-ratio: 1.7;
+  position: relative;
+  right: 150px;
+  top: 50px;
+}
+
+#hero .text-content p {
+  width: 70%;
 }
 
 /* Galería Héroes */
@@ -273,16 +287,8 @@ footer {
   background: linear-gradient(var(--color-darker), var(--color-dark));
 }
 
-footer a {
-  transition: ease-in-out 0.3s;
-}
-
 footer p {
   font-size: small;
-}
-
-footer a:hover {
-  color: var(--color-highlight);
 }
 
 footer img.deco {
@@ -361,12 +367,19 @@ footer img.deco {
   .text-content h1 {
     font-size: 26px;
   }
-  .text-content p {
+  #hero .text-content {
+    align-items: center;
+    text-align: center;
+  }
+  #hero .text-content p {
     width: 100%;
+    background-color: transparent;
   }
 
-  iframe {
+  #hero iframe {
     max-width: 100%;
+    top: 0;
+    right: 0;
   }
 
   #weapons > div {
